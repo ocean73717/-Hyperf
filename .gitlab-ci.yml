@@ -1,7 +1,7 @@
 stages:
   - docker-pkg
   - k8s-deploy
-  - delete-k8s-deploy
+
 
 variables:
   PROJECT_NAME: hyperf 
@@ -24,13 +24,4 @@ k8s-deploy:
   dependencies:
     - docker-pkg
 
-delete-deploy:
-  stage: delete-k8s-deploy
-  script: kubectl delete deploy transport
-  allow_failure: false
-
-delete-svc:
-  stage: delete-k8s-deploy
-  script: kubectl delete svc transport
-  allow_failure: false
 
