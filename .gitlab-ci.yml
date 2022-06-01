@@ -5,7 +5,7 @@ stages:
 
 variables:
   PROJECT_NAME: hyperf 
-  REGISTRY_URL: k8s-harbor.fitipower.inc/hyperf/hyperf
+  REGISTRY_URL: fp-harbor.fitipower.inc/hyperf/hyperf
 
 docker-pkg:
   stage: docker-pkg
