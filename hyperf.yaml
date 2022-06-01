@@ -66,7 +66,7 @@ spec:
 
       - name: transport
 
-        image: k8s-harbor.fitipower.inc/hyperf/hyperf
+        image: fp-harbor.fitipower.inc/hyperf/hyperf
 
         imagePullPolicy: Always
 
