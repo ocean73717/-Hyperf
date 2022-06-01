@@ -10,7 +10,7 @@ variables:
 docker-pkg:
   stage: docker-pkg
   before_script:
-    - docker login -u admin -p Harbor12345  fp-harbor.fitipower.inc
+    - docker login -u ocean.hsu -p Vm6ru8123  fp-harbor.fitipower.inc
   script:
     - docker build  -t  $REGISTRY_URL  .
     - docker push   $REGISTRY_URL 
