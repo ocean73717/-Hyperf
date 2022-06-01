@@ -1,0 +1,109 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: transport
+
+  labels:
+
+    app: transport
+
+spec:
+
+  type: NodePort
+
+  ports:
+
+  - name: http
+
+    port: 9501                      #服务端口
+
+    targetPort: 9501
+
+    nodePort: 30018                 #NodePort方式暴露 
+
+  selector:
+
+    app: transport
+
+---
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: transport
+
+spec:
+
+  selector:
+
+    matchLabels:
+
+      app: transport
+
+  replicas: 1
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: transport
+
+    spec:
+
+      imagePullSecrets:
+
+        - name: registry-pull-secret3
+
+      containers:
+
+      - name: transport
+
+        image: k8s-harbor.fitipower.inc/hyperf/hyperf
+
+        imagePullPolicy: Always
+
+        securityContext:                    
+
+          runAsUser: 0                      #设置以ROOT用户运行容器
+
+          privileged: true                  #拥有特权
+
+        ports:
+
+        - name: http
+
+          containerPort: 9501
+
+        resources:
+
+          limits:
+
+            nvidia.com/gpu: 1
+            
+        volumeMounts:
+
+        - mountPath:  /opt/www/runtime      
+
+          name: test-volume  
+
+      volumes:
+
+      - name: test-volume   
+
+        hostPath:  
+
+          path: /data/transport/logs # directory location on host          
+
+          type: DirectoryOrCreate # this field is optional
+
+      nodeSelector:
+
+         gpu-node: "hcita-ts3-RTX3080"
