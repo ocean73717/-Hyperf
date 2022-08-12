@@ -7,6 +7,7 @@ variables:
   #PROJECT_NAME: hyperf 
   #REGISTRY_URL: fp-harbor.fitipower.inc/hyperf/hyperf
   PROJECT_NAME: iss
+  REGISTRY_URL: 10.1.11.45:18080/iss/test
 docker-pkg:
   stage: docker-pkg
   before_script:
