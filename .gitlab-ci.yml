@@ -1,27 +1,27 @@
 stages:
   - docker-pkg
-  - k8s-deploy
+  #- k8s-deploy
 
 
 variables:
-  PROJECT_NAME: hyperf 
-  REGISTRY_URL: fp-harbor.fitipower.inc/hyperf/hyperf
-
+  #PROJECT_NAME: hyperf 
+  #REGISTRY_URL: fp-harbor.fitipower.inc/hyperf/hyperf
+  PROJECT_NAME: iss
 docker-pkg:
   stage: docker-pkg
   before_script:
-    - docker login -u ocean.hsu -p Vm6ru8123  fp-harbor.fitipower.inc
+    #- docker login -u ocean.hsu -p Vm6ru8123  fp-harbor.fitipower.inc
+    - docker login -u admin -p harbor@iss 10.1.11.45:18080
   script:
     - docker build  -t  $REGISTRY_URL  .
     - docker push   $REGISTRY_URL 
   allow_failure: false
 
-k8s-deploy:
-  stage: k8s-deploy
-  script:
-    - kubectl apply -f ./hyperf.yaml
-  allow_failure: false
-  dependencies:
-    - docker-pkg
-
+#k8s-deploy:
+  #stage: k8s-deploy
+  #script:
+    #- kubectl apply -f ./hyperf.yaml
+  #allow_failure: false
+  #dependencies:
+    #- docker-pkg
 
