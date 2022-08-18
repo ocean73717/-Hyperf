@@ -1,22 +1,20 @@
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: test-deployment
+  name: test-deploy
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      name: test
   strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+        type: RollingUpdate
+                rollingUpdate:
+                   maxSurge: 25%
+                   maxUnavailable: 25%  
   template:
-    metadata:
-      labels:
-        app: test
-    spec:
-      containers:
-        image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
-        imagePullPolicy: IfNotPresent
+        metadata:
+           labels:
+             app: 
+        spec:
+          containers:
+            - name: test-deploy
+              image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
+                          imagePullPolicy: IfNotPresent
