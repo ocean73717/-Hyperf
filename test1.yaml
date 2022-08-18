@@ -20,21 +20,3 @@ spec:
       containers:
         image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
         imagePullPolicy: IfNotPresent
-        name: tf
-        resources:
-          limits:
-            aliyun.com/gpu-mem: "20"
-            cpu: "16"
-            memory: 20Gi
-          requests:
-            aliyun.com/gpu-mem: "20"
-            cpu: "16"
-            memory: 20Gi
-      dnsPolicy: Default
-      nodeSelector:
-        iss_gpumemory: "20"
-        iss_gputype: GRIDA100D-20C
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
