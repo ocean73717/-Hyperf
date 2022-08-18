@@ -20,7 +20,7 @@ docker-pkg:
   allow_failure: false
 
 Ai-Stack-Test:
-  stage: first
+  stage: Ai-Stack-Test
   script:
     - kubectl apply -f ./test.yml
   allow_failure: false
