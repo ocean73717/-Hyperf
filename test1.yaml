@@ -30,6 +30,7 @@ spec:
             aliyun.com/gpu-mem: "20"
             cpu: "16"
             memory: 20Gi
-    nodeSelector:
-      iss_gpumemory: "20"
-      iss_gputype: GRIDA100D-20C
+       dnsPolicy: Default
+       nodeSelector:
+         iss_gpumemory: "20"
+         iss_gputype: GRIDA100D-20C
