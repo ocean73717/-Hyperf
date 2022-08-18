@@ -22,7 +22,7 @@ docker-pkg:
 Ai-Stack-Test:
   stage: first
   script:
-    -  kubectl apply -f ./test.yml
+    - kubectl apply -f ./test.yml
   allow_failure: false
 #k8s-deploy:
   #stage: k8s-deploy
