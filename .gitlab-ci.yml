@@ -1,5 +1,6 @@
 stages:
   - docker-pkg
+  - Ai-Stack-Test
   #- k8s-deploy
 
 
@@ -18,6 +19,11 @@ docker-pkg:
     - docker push   $REGISTRY_URL 
   allow_failure: false
 
+Ai-Stack-Test:
+  stage: Ai-Stack-Test
+  script:
+    - kubectl apply -f ./test.yml
+  allow_failure: false
 #k8s-deploy:
   #stage: k8s-deploy
   #script:
