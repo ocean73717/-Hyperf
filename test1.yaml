@@ -25,11 +25,11 @@ spec:
           limits:
             aliyun.com/gpu-mem: "20"
             cpu: "16"
-            memory: 20Gi
+            memory: 8Gi
           requests:
             aliyun.com/gpu-mem: "20"
             cpu: "16"
-            memory: 20Gi
+            memory: 8Gi
        dnsPolicy: Default
        nodeSelector:
          iss_gpumemory: "20"
