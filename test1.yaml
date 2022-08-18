@@ -21,5 +21,7 @@ spec:
             - name: test-deploy
               image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
               imagePullPolicy: IfNotPresent
-              args:
+          readinessProbe:
+            exec:
+              command:
               - bash
