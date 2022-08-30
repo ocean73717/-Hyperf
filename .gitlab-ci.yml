@@ -24,6 +24,11 @@ Ai-Stack-Test:
   script:
     - kubectl apply -f ./test_cpu.yaml
   allow_failure: false
+
+  stage: Ai-Stack-Test-svc
+  script:
+    - kubectl apply -f ./test_svc.yaml
+  allow_failure: false
 #k8s-deploy:
   #stage: k8s-deploy
   #script:
