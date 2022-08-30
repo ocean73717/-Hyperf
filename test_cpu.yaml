@@ -28,6 +28,6 @@ spec:
             aliyun.com/gpu-mem: "2"
             cpu: "4"
             memory: 8Gi
-        nodeSelector:
-          iss_gpumemory: "20"
-          iss_gputype: GRIDA100D-20C
+      nodeSelector:
+        iss_gpumemory: "20"
+        iss_gputype: GRIDA100D-20C
