@@ -22,11 +22,11 @@ spec:
         image: cheyang/gpu-player:v2
         resources:
           limits:
-            aliyun.com/gpu-mem: "2"
+            aliyun.com/gpu-mem: "20"
             cpu: "4"
             memory: 8Gi
           requests:
-            aliyun.com/gpu-mem: "2"
+            aliyun.com/gpu-mem: "20"
             cpu: "4"
             memory: 8Gi
       nodeSelector:
