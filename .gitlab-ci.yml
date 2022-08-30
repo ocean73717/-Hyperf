@@ -19,13 +19,14 @@ docker-pkg:
     - docker push   $REGISTRY_URL 
   allow_failure: false
 
-Ai-Stack-Test:
+Ai-Stack-Test-GPU:
   stage: Ai-Stack-Test
   script:
     - kubectl apply -f ./test_cpu.yaml
   allow_failure: false
 
-  stage: Ai-Stack-Test-svc
+Ai-Stack-Test-SVC:
+  stage: Ai-Stack-Test
   script:
     - kubectl apply -f ./test_svc.yaml
   allow_failure: false
