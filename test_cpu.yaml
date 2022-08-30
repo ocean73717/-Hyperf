@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: binpack-1
-        image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
+        #image: 10.1.11.45:18080/library/ultralytics/yolov5:v1
+        image: cheyang/gpu-player:v2
         resources:
           limits:
             aliyun.com/gpu-mem: "2"
