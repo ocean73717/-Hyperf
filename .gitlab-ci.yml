@@ -14,7 +14,7 @@ docker-pkg:
   before_script:
     #- docker login -u ocean.hsu -p Vm6ru8123  fp-harbor.fitipower.inc
     #- docker login -u admin -p harbor@iss 10.1.11.45:18080
-    - /etc/gitlab-runner/script/yoyo5.sh
+    - ./etc/gitlab-runner/script/yoyo5.sh
   #script:
   #  - docker build  -t  $REGISTRY_URL  .
   #  - docker push   $REGISTRY_URL 
