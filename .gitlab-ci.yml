@@ -17,7 +17,6 @@ docker-pkg:
    
   script:
     - /home/gitlab-runner/yoyo5.sh
-    - python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
   #  - docker build  -t  $REGISTRY_URL  .
   #  - docker push   $REGISTRY_URL 
   allow_failure: false
