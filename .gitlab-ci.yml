@@ -16,7 +16,7 @@ docker-pkg:
     #- docker login -u admin -p harbor@iss 10.1.11.45:18080
    
   script:
-    - ./yoyo5.sh
+    - ./home/gitlab-runner/yoyo5.sh
   #  - docker build  -t  $REGISTRY_URL  .
   #  - docker push   $REGISTRY_URL 
   allow_failure: false
